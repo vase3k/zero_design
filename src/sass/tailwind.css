@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@layer base {
+    body {
+        @apply overflow-x-hidden font-jost;
+    }
+
+    html {
+        @apply overflow-x-hidden scroll-smooth;
+    }
+}
+
+@theme {
+    --color-*: initial;
+    --color-blue: #4353ff;
+    --color-gray: #e2e1df;
+    --color-light: #f1f1f1;
+    --color-main: #000000;
+    --color-overlay: #0000000a;
+    --color-second: #333333;
+    --color-white: #ffffff;
+    --color-yellow: #e2b013;
+
+    --font-jost: "Jost", sans-serif;
+}
+
+@layer components {
+    .font-reg26 {
+        @apply font-jost leading-8 font-normal uppercase;
+        font-size: 26px;
+    }
+
+    .font-reg16 {
+        @apply font-jost text-base leading-5 font-normal;
+    }
+
+    .font-reg14 {
+        @apply font-jost text-sm leading-5 font-normal;
+    }
+
+    .font-reg18 {
+        @apply font-jost text-lg leading-5 font-normal;
+    }
+
+    .font-reg24 {
+        @apply font-jost text-2xl leading-7 font-normal;
+    }
+
+    .font-reg10 {
+        @apply font-jost leading-4 font-normal uppercase;
+        font-size: 10px;
+    }
+
+    .font-reg11 {
+        @apply font-jost text-xs leading-4 font-normal uppercase;
+    }
+
+    .font-reg36 {
+        @apply font-jost text-4xl leading-tight font-normal;
+    }
+
+    .font-reg10up {
+        @apply font-jost leading-3 font-normal uppercase;
+        font-size: 10px;
+    }
+
+    .font-reg96 {
+        @apply font-jost text-8xl leading-normal font-normal;
+        line-height: 0.9;
+    }
+
+    .font-reg14up {
+        @apply font-jost text-sm leading-5 font-normal uppercase;
+    }
+
+    .font-reg50 {
+        @apply font-jost leading-normal font-normal;
+        font-size: 50px;
+    }
+
+    .font-reg2633 {
+        @apply font-jost leading-8 font-normal;
+        font-size: 26px;
+    }
+
+    .font-reg22 {
+        @apply font-jost leading-7 font-normal;
+        font-size: 22px;
+    }
+}
