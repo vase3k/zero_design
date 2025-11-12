@@ -7,9 +7,66 @@
         <title>title</title>
     </head>
     <body>
-        <header>
-            <h1 class="font-reg22">test title</h1>
-        </header>
+        <div class="container">
+            <header
+                class="grid auto-cols-max grid-flow-col items-center justify-between py-5"
+            >
+                <img
+                    src="/src/img/header/header__img_3.svg"
+                    alt="company logo"
+                />
+                <ul
+                    class="hidden auto-cols-max grid-flow-col gap-x-[25px] *:underline-offset-4 *:hover:underline md:grid"
+                >
+                    <li>Company</li>
+                    <li>Utility</li>
+                    <li>CMS Pages</li>
+                    <li>Landing</li>
+                </ul>
+                <div
+                    class="grid auto-cols-max grid-flow-col items-center gap-x-1 md:gap-x-4"
+                >
+                    <button
+                        type="button"
+                        class="font-reg18 h-[50px] bg-main p-2 text-white underline-offset-4 hover:underline md:w-[168px]"
+                    >
+                        $129 Buy Now
+                    </button>
+                    <img
+                        src="/src/img/header/header__img_1.svg"
+                        alt="loop"
+                        class="transition-transform hover:scale-105"
+                    />
+                    <img
+                        src="/src/img/header/header__img_2.svg"
+                        alt="shoping card"
+                        class="transition-transform hover:scale-105"
+                    />
+                </div>
+                <label
+                    class="peer/burger group relative grid h-7 w-7 content-between *:not-last:h-1 *:not-last:rounded-sm *:not-last:bg-main md:hidden"
+                >
+                    <div
+                        class="w-full transition-transform group-has-checked:absolute group-has-checked:top-1/2 group-has-checked:-translate-y-1/2 group-has-checked:rotate-45"
+                    ></div>
+                    <div class="w-4/5 group-has-checked:hidden"></div>
+                    <div
+                        class="w-full transition-transform group-has-checked:absolute group-has-checked:bottom-1/2 group-has-checked:translate-y-1/2 group-has-checked:-rotate-45"
+                    ></div>
+                    <input type="checkbox" class="invisible absolute inset-0" />
+                </label>
+
+                <ul
+                    class="absolute left-1/2 grid -translate-x-1/2 -translate-y-full auto-cols-max gap-y-[25px] transition-all *:underline-offset-4 peer-has-checked/burger:top-[114px] peer-has-checked/burger:translate-y-0 *:hover:underline md:hidden"
+                >
+                    <li>Company</li>
+                    <li>Utility</li>
+                    <li>CMS Pages</li>
+                    <li>Landing</li>
+                </ul>
+            </header>
+        </div>
+
         <main></main>
         <footer></footer>
         <script type="module" src="/src/js/script.js"></script>

@@ -2,7 +2,7 @@
 
 @layer base {
     body {
-        @apply overflow-x-hidden font-jost;
+        @apply overflow-x-hidden bg-white font-jost;
     }
 
     html {
@@ -22,9 +22,19 @@
     --color-yellow: #e2b013;
 
     --font-jost: "Jost", sans-serif;
+
+    --breakpoint-*: initial;
+    --breakpoint-sm: 40rem; /*640px*/
+    --breakpoint-md: 48rem; /*768px*/
+    --breakpoint-lg: 64rem; /*1024px*/
+    --breakpoint-xl: 82.5rem; /*1320px*/
 }
 
 @layer components {
+    .container {
+        @apply mx-auto;
+    }
+
     .font-reg26 {
         @apply font-jost leading-8 font-normal uppercase;
         font-size: 26px;
