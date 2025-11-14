@@ -32,7 +32,7 @@
 
 @layer components {
     .container {
-        @apply mx-auto px-1 sm:px-0;
+        @apply mx-auto max-xl:px-1;
     }
 
     .font-reg26 {

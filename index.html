@@ -9,12 +9,14 @@
     <body>
         <header class="container">
             <div
-                class="grid auto-cols-max grid-flow-col content-stretch items-center justify-between py-5"
+                class="grid auto-cols-max grid-flow-col content-stretch items-center justify-between py-5 max-md:grid-cols-[max-content_1fr] max-md:justify-items-end max-md:gap-x-5"
             >
                 <img
                     src="/src/img/header/header__img_3.svg"
                     alt="company logo"
+                    class="z-1"
                 />
+
                 <ul
                     class="hidden auto-cols-max grid-flow-col items-center gap-x-[25px] *:underline-offset-4 *:hover:underline md:grid"
                 >
@@ -23,6 +25,7 @@
                     <li>CMS Pages</li>
                     <li>Landing</li>
                 </ul>
+
                 <div
                     class="grid auto-cols-max grid-flow-col items-center gap-x-1 md:gap-x-4"
                 >
@@ -43,8 +46,9 @@
                         class="transition-transform hover:scale-105"
                     />
                 </div>
+
                 <label
-                    class="peer/burger group relative grid h-7 w-7 content-between *:not-last:h-1 *:not-last:rounded-sm *:not-last:bg-main md:hidden"
+                    class="peer/burger group relative z-1 grid h-7 w-7 content-between *:not-last:h-1 *:not-last:rounded-sm *:not-last:bg-main md:hidden"
                 >
                     <div
                         class="w-full transition-transform group-has-checked:absolute group-has-checked:top-1/2 group-has-checked:-translate-y-1/2 group-has-checked:rotate-45"
@@ -57,7 +61,7 @@
                 </label>
 
                 <ul
-                    class="absolute top-0 left-1/2 grid -translate-x-1/2 -translate-y-full auto-cols-max gap-y-[25px] bg-white transition-all *:underline-offset-4 peer-has-checked/burger:top-[114px] peer-has-checked/burger:translate-y-0 *:hover:underline md:hidden"
+                    class="absolute inset-x-1 top-0 grid -translate-y-full auto-cols-max justify-center gap-y-[25px] bg-white transition-all *:underline-offset-4 peer-has-checked/burger:translate-y-0 peer-has-checked/burger:pt-[114px] *:hover:underline md:hidden"
                 >
                     <li>Company</li>
                     <li>Utility</li>
