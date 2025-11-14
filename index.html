@@ -28,7 +28,7 @@
                 >
                     <button
                         type="button"
-                        class="font-reg18 h-[50px] bg-main p-2 text-white underline-offset-4 hover:underline md:w-[168px]"
+                        class="sm:font-reg18 hidden h-[50px] bg-main p-2 text-white underline-offset-4 hover:underline sm:block md:w-[168px]"
                     >
                         $129 Buy Now
                     </button>
@@ -57,7 +57,7 @@
                 </label>
 
                 <ul
-                    class="absolute top-0 left-1/2 grid -translate-x-1/2 -translate-y-full auto-cols-max gap-y-[25px] transition-all *:underline-offset-4 peer-has-checked/burger:top-[114px] peer-has-checked/burger:translate-y-0 *:hover:underline md:hidden"
+                    class="absolute top-0 left-1/2 grid -translate-x-1/2 -translate-y-full auto-cols-max gap-y-[25px] bg-white transition-all *:underline-offset-4 peer-has-checked/burger:top-[114px] peer-has-checked/burger:translate-y-0 *:hover:underline md:hidden"
                 >
                     <li>Company</li>
                     <li>Utility</li>
@@ -68,7 +68,71 @@
         </header>
 
         <main>
-            <div class="container"></div>
+            <div
+                class="container grid sm:grid-cols-2 xl:grid-cols-[1fr_685px] xl:grid-rows-[785px]"
+            >
+                <div>
+                    <div
+                        class="font-reg14up mt-5 w-[136px] bg-yellow text-center leading-5 text-white md:mt-8 lg:mt-14 xl:mt-[154px]"
+                    >
+                        Design addicted
+                    </div>
+                    <h1 class="font-reg50 lg:font-reg96 mt-10">
+                        A stylish UI Kit
+                    </h1>
+                    <h2 class="font-reg36 lg:font-reg50 mt-5">
+                        for all web creatives
+                    </h2>
+                    <p class="font-reg2633 mt-5">
+                        Zero is a Webflow Ecommerce and CMS UI kit including
+                        several carefully designed page layouts.
+                    </p>
+                    <ul
+                        class="mt-8 grid auto-cols-max grid-flow-col justify-between *:grid *:justify-items-center lg:mt-[87px] xl:gap-x-[66px]"
+                    >
+                        <li>
+                            <img
+                                src="/src/img/hero/hero__icon_1.svg"
+                                alt="icon"
+                            />
+                            <div class="font-reg10 mt-[15px]">smooth</div>
+                            <div class="font-reg11">interactions</div>
+                        </li>
+                        <li>
+                            <img
+                                src="/src/img/hero/hero__icon_2.svg"
+                                alt="icon"
+                            />
+                            <div class="font-reg10 mt-[15px]">many</div>
+                            <div class="font-reg11">page layouts</div>
+                        </li>
+                        <li>
+                            <img
+                                src="/src/img/hero/hero__icon_3.svg"
+                                alt="icon"
+                            />
+                            <div class="font-reg10 mt-[15px]">fully</div>
+                            <div class="font-reg11">responsive</div>
+                        </li>
+                        <li>
+                            <img
+                                src="/src/img/hero/hero__icon_4.svg"
+                                alt="icon"
+                            />
+                            <div class="font-reg10 mt-[15px]">fast</div>
+                            <div class="font-reg11">customization</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="self-center xl:relative xl:w-[728px] xl:self-auto">
+                    <img
+                        src="/src/img/hero/hero__img.png"
+                        alt="main picture"
+                        class="xl:absolute"
+                    />
+                </div>
+            </div>
         </main>
         <footer></footer>
         <script type="module" src="/src/js/script.js"></script>
