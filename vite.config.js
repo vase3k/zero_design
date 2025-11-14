@@ -32,9 +32,9 @@ export default defineConfig({
             },
         ),
         meta({
-            title: "title",
-            description: "описание",
-            url: "https://liongroup.by/",
+            title: "zero design",
+            description: "zero design",
+            url: "https://zeroDesign.by/",
             img: "/images/meta-og-image.jpg",
             color: "#ffffff",
         }),
@@ -55,12 +55,12 @@ export default defineConfig({
         }),
         convertWebp({
             inputDir: "dist",
-            width: 180,
+            width: 1320,
             quality: 80,
             excludeFolder: ["images"],
         }),
-        // legacy({
-        // 	targets: ["defaults"],
-        // }),
+        legacy({
+            targets: ["defaults"],
+        }),
     ],
 });

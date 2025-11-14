@@ -6,28 +6,31 @@ import sharp from "sharp";
 
 function convertWebp(options = {}) {
     const inputDir = options.inputDir || "dist";
-    const excludeFolders = options.excludeFolder || ["images"]; // array of folder names
+    const excludeFolders = options.excludeFolder || ["images"];
     const excludeFilesPrefix = options.excludeFilesPrefix || [
         "android-chrome",
         "apple-touch-icon",
         "favicon-",
         "yandex-browser",
-    ]; // files to skip
+    ];
     const quality = options.quality || 80;
     const width = options.width || null;
 
+    let totalOriginalBytes = 0;
+    let totalNewBytes = 0;
+
     function isExcluded(filePath) {
-        // skip folder
         if (
             excludeFolders.some((folder) =>
                 filePath.startsWith(join(inputDir, folder)),
             )
         )
             return true;
-        // skip file by prefix
+
         const name = basename(filePath);
         if (excludeFilesPrefix.some((prefix) => name.startsWith(prefix)))
             return true;
+
         return false;
     }
 
@@ -42,10 +45,7 @@ function convertWebp(options = {}) {
         );
 
         try {
-            const originalMetadata = await sharp(filePath).metadata();
-            const originalWidth = originalMetadata.width || 0;
-            const originalSize = statSync(filePath).size; // bytes
-
+            const originalSize = statSync(filePath).size;
             let pipeline = sharp(filePath);
             if (width)
                 pipeline = pipeline.resize({ width, withoutEnlargement: true });
@@ -56,45 +56,43 @@ function convertWebp(options = {}) {
             await fs.promises.writeFile(outputPath, data);
             await fs.promises.unlink(filePath);
 
-            const newMetadata = await sharp(outputPath).metadata();
-            const newWidth = newMetadata.width || originalWidth;
-            const newSize = data.length; // bytes
-            const percentSaved = (
+            const newSize = data.length;
+
+            totalOriginalBytes += originalSize;
+            totalNewBytes += newSize;
+
+            const savedPercent = (
                 ((originalSize - newSize) / originalSize) *
                 100
             ).toFixed(1);
 
-            const formatSize = (size) =>
-                size > 1024 * 1024
-                    ? (size / 1024 / 1024).toFixed(2) + "MB"
-                    : (size / 1024).toFixed(1) + "KB";
-
-            const widthLog =
-                newWidth && originalWidth !== newWidth
-                    ? ` | width ${originalWidth} → ${newWidth}`
-                    : ` | no change`;
-
             console.log(
-                `✔ converted: ${filePath} → ${outputPath} | ${formatSize(
-                    originalSize,
-                )} → ${formatSize(newSize)} | saved ${percentSaved}%${widthLog}`,
+                `✔ converted: ${filePath} → ${outputPath} | ${(
+                    originalSize /
+                    1024 /
+                    1024
+                ).toFixed(
+                    2,
+                )} MB → ${(newSize / 1024 / 1024).toFixed(2)} MB | saved ${savedPercent}%`,
             );
         } catch (err) {
             console.warn(`✖ skip: ${filePath} (${err.message})`);
         }
     }
 
-    function walkDir(dir) {
-        for (const file of readdirSync(dir)) {
+    async function walkDir(dir) {
+        const files = readdirSync(dir);
+        for (const file of files) {
             const filePath = join(dir, file);
             const stats = statSync(filePath);
-            if (stats.isDirectory()) walkDir(filePath);
-            else convertFile(filePath);
+            if (stats.isDirectory()) await walkDir(filePath);
+            else await convertFile(filePath);
         }
     }
 
     function updateHtmlUrls(dir) {
-        for (const file of readdirSync(dir)) {
+        const files = readdirSync(dir);
+        for (const file of files) {
             const filePath = join(dir, file);
             const stats = statSync(filePath);
             if (stats.isDirectory()) updateHtmlUrls(filePath);
@@ -109,9 +107,17 @@ function convertWebp(options = {}) {
 
     return {
         name: "vite-plugin-convert-to-webp",
-        closeBundle() {
-            walkDir(inputDir);
+        async closeBundle() {
+            await walkDir(inputDir);
             updateHtmlUrls(inputDir);
+
+            const savedPercent = (
+                ((totalOriginalBytes - totalNewBytes) / totalOriginalBytes) *
+                100
+            ).toFixed(1);
+            console.log(
+                `\n💾 Total: ${(totalOriginalBytes / 1024 / 1024).toFixed(2)} MB → ${(totalNewBytes / 1024 / 1024).toFixed(2)} MB | saved ${savedPercent}%`,
+            );
         },
     };
 }

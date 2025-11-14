@@ -35,6 +35,10 @@
         @apply mx-auto max-xl:px-1;
     }
 
+    .underline_hover {
+        @apply [&_div]:absolute [&_div]:bottom-0 [&_div]:h-0.5 [&_div]:w-0 [&_div]:bg-main [&_div]:transition-[width] [&_div]:duration-300 *:hover:[&_div]:w-full *:[li]:relative;
+    }
+
     .font-reg26 {
         @apply font-jost leading-8 font-normal uppercase;
         font-size: 26px;
