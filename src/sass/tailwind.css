@@ -104,215 +104,28 @@
 }
 
 @layer utilities {
-    /* sm */
     @media (min-width: 40rem) {
-        .sm\:font-reg26 {
-            @apply font-jost leading-8 font-normal uppercase;
-            font-size: 26px;
-        }
-        .sm\:font-reg16 {
-            @apply font-jost text-base leading-5 font-normal;
-        }
-        .sm\:font-reg14 {
-            @apply font-jost text-sm leading-5 font-normal;
-        }
         .sm\:font-reg18 {
             @apply font-jost text-lg leading-5 font-normal;
-        }
-        .sm\:font-reg24 {
-            @apply font-jost text-2xl leading-7 font-normal;
-        }
-        .sm\:font-reg10 {
-            @apply font-jost leading-4 font-normal uppercase;
-            font-size: 10px;
-        }
-        .sm\:font-reg11 {
-            @apply font-jost text-xs leading-4 font-normal uppercase;
-        }
-        .sm\:font-reg36 {
-            @apply font-jost text-4xl leading-tight font-normal;
-        }
-        .sm\:font-reg10up {
-            @apply font-jost leading-3 font-normal uppercase;
-            font-size: 10px;
-        }
-        .sm\:font-reg96 {
-            @apply font-jost text-8xl leading-normal font-normal;
-            line-height: 0.9;
-        }
-        .sm\:font-reg14up {
-            @apply font-jost text-sm leading-5 font-normal uppercase;
-        }
-        .sm\:font-reg50 {
-            @apply font-jost leading-normal font-normal;
-            font-size: 50px;
-        }
-        .sm\:font-reg2633 {
-            @apply font-jost leading-8 font-normal;
-            font-size: 26px;
         }
         .sm\:font-reg22 {
             @apply font-jost leading-7 font-normal;
             font-size: 22px;
         }
-    }
-
-    /* md */
-    @media (min-width: 48rem) {
-        .md\:font-reg26 {
-            @apply font-jost leading-8 font-normal uppercase;
-            font-size: 26px;
-        }
-        .md\:font-reg16 {
-            @apply font-jost text-base leading-5 font-normal;
-        }
-        .md\:font-reg14 {
-            @apply font-jost text-sm leading-5 font-normal;
-        }
-        .md\:font-reg18 {
-            @apply font-jost text-lg leading-5 font-normal;
-        }
-        .md\:font-reg24 {
-            @apply font-jost text-2xl leading-7 font-normal;
-        }
-        .md\:font-reg10 {
-            @apply font-jost leading-4 font-normal uppercase;
-            font-size: 10px;
-        }
-        .md\:font-reg11 {
-            @apply font-jost text-xs leading-4 font-normal uppercase;
-        }
-        .md\:font-reg36 {
-            @apply font-jost text-4xl leading-tight font-normal;
-        }
-        .md\:font-reg10up {
-            @apply font-jost leading-3 font-normal uppercase;
-            font-size: 10px;
-        }
-        .md\:font-reg96 {
+        .sm\:font-reg96 {
             @apply font-jost text-8xl leading-normal font-normal;
             line-height: 0.9;
         }
-        .md\:font-reg14up {
-            @apply font-jost text-sm leading-5 font-normal uppercase;
-        }
-        .md\:font-reg50 {
-            @apply font-jost leading-normal font-normal;
-            font-size: 50px;
-        }
-        .md\:font-reg2633 {
-            @apply font-jost leading-8 font-normal;
-            font-size: 26px;
-        }
-        .md\:font-reg22 {
-            @apply font-jost leading-7 font-normal;
-            font-size: 22px;
-        }
     }
 
-    /* lg */
     @media (min-width: 64rem) {
-        .lg\:font-reg26 {
-            @apply font-jost leading-8 font-normal uppercase;
-            font-size: 26px;
-        }
-        .lg\:font-reg16 {
-            @apply font-jost text-base leading-5 font-normal;
-        }
-        .lg\:font-reg14 {
-            @apply font-jost text-sm leading-5 font-normal;
-        }
-        .lg\:font-reg18 {
-            @apply font-jost text-lg leading-5 font-normal;
-        }
-        .lg\:font-reg24 {
-            @apply font-jost text-2xl leading-7 font-normal;
-        }
-        .lg\:font-reg10 {
-            @apply font-jost leading-4 font-normal uppercase;
-            font-size: 10px;
-        }
-        .lg\:font-reg11 {
-            @apply font-jost text-xs leading-4 font-normal uppercase;
-        }
-        .lg\:font-reg36 {
-            @apply font-jost text-4xl leading-tight font-normal;
-        }
-        .lg\:font-reg10up {
-            @apply font-jost leading-3 font-normal uppercase;
-            font-size: 10px;
-        }
         .lg\:font-reg96 {
             @apply font-jost text-8xl leading-normal font-normal;
             line-height: 0.9;
         }
-        .lg\:font-reg14up {
-            @apply font-jost text-sm leading-5 font-normal uppercase;
-        }
         .lg\:font-reg50 {
             @apply font-jost leading-normal font-normal;
             font-size: 50px;
-        }
-        .lg\:font-reg2633 {
-            @apply font-jost leading-8 font-normal;
-            font-size: 26px;
-        }
-        .lg\:font-reg22 {
-            @apply font-jost leading-7 font-normal;
-            font-size: 22px;
-        }
-    }
-
-    /* xl */
-    @media (min-width: 82.5rem) {
-        .xl\:font-reg26 {
-            @apply font-jost leading-8 font-normal uppercase;
-            font-size: 26px;
-        }
-        .xl\:font-reg16 {
-            @apply font-jost text-base leading-5 font-normal;
-        }
-        .xl\:font-reg14 {
-            @apply font-jost text-sm leading-5 font-normal;
-        }
-        .xl\:font-reg18 {
-            @apply font-jost text-lg leading-5 font-normal;
-        }
-        .xl\:font-reg24 {
-            @apply font-jost text-2xl leading-7 font-normal;
-        }
-        .xl\:font-reg10 {
-            @apply font-jost leading-4 font-normal uppercase;
-            font-size: 10px;
-        }
-        .xl\:font-reg11 {
-            @apply font-jost text-xs leading-4 font-normal uppercase;
-        }
-        .xl\:font-reg36 {
-            @apply font-jost text-4xl leading-tight font-normal;
-        }
-        .xl\:font-reg10up {
-            @apply font-jost leading-3 font-normal uppercase;
-            font-size: 10px;
-        }
-        .xl\:font-reg96 {
-            @apply font-jost text-8xl leading-normal font-normal;
-            line-height: 0.9;
-        }
-        .xl\:font-reg14up {
-            @apply font-jost text-sm leading-5 font-normal uppercase;
-        }
-        .xl\:font-reg50 {
-            @apply font-jost leading-normal font-normal;
-            font-size: 50px;
-        }
-        .xl\:font-reg2633 {
-            @apply font-jost leading-8 font-normal;
-            font-size: 26px;
-        }
-        .xl\:font-reg22 {
-            @apply font-jost leading-7 font-normal;
-            font-size: 22px;
         }
     }
 }
